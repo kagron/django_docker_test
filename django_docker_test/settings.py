@@ -76,11 +76,12 @@ WSGI_APPLICATION = 'django_docker_test.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'HOST': 'db',
-        'PORT': 5432,
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'database1',
+        'USER': 'database1_role',
+        'PASSWORD': 'database1_password',
+        'HOST': 'database1',  # <-- IMPORTANT: same name as docker-compose service!
+        'PORT': '5432',
     }
 }
 
